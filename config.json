@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "name": "MacBook Air 13\" M5",
+      "target_price": null,
+      "urls": {
+        "amazon": "INCOLLA_QUI_URL_AMAZON",
+        "mediaworld": "INCOLLA_QUI_URL_MEDIAWORLD",
+        "unieuro": "INCOLLA_QUI_URL_UNIEURO",
+        "euronics": "INCOLLA_QUI_URL_EURONICS"
+      }
+    },
+    {
+      "name": "MacBook Air 15\" M5",
+      "target_price": null,
+      "urls": {
+        "amazon": "INCOLLA_QUI_URL_AMAZON",
+        "mediaworld": "INCOLLA_QUI_URL_MEDIAWORLD",
+        "unieuro": "INCOLLA_QUI_URL_UNIEURO",
+        "euronics": "INCOLLA_QUI_URL_EURONICS"
+      }
+    },
+    {
+      "name": "MacBook Pro 14\" M5",
+      "target_price": null,
+      "urls": {
+        "amazon": "INCOLLA_QUI_URL_AMAZON",
+        "mediaworld": "INCOLLA_QUI_URL_MEDIAWORLD",
+        "unieuro": "INCOLLA_QUI_URL_UNIEURO",
+        "euronics": "INCOLLA_QUI_URL_EURONICS"
+      }
+    },
+    {
+      "name": "MacBook Pro 16\" M5",
+      "target_price": null,
+      "urls": {
+        "amazon": "INCOLLA_QUI_URL_AMAZON",
+        "mediaworld": "INCOLLA_QUI_URL_MEDIAWORLD",
+        "unieuro": "INCOLLA_QUI_URL_UNIEURO",
+        "euronics": "INCOLLA_QUI_URL_EURONICS"
+      }
+    }
+  ]
+}
