@@ -1,1 +1,56 @@
-{}
+{
+ "MacBook Air 13\" M5|mediaworld": [
+  {
+   "date": "2026-09-29",
+   "price": 1449.0
+  }
+ ],
+ "MacBook Air 13\" M5|unieuro": [
+  {
+   "date": "2026-09-29",
+   "price": 1449.0
+  }
+ ],
+ "MacBook Air 13\" M5|euronics": [
+  {
+   "date": "2026-09-29",
+   "price": 1449.0
+  }
+ ],
+ "MacBook Air 15\" M5|mediaworld": [
+  {
+   "date": "2026-09-29",
+   "price": 1749.0
+  }
+ ],
+ "MacBook Air 15\" M5|unieuro": [
+  {
+   "date": "2026-09-29",
+   "price": 1749.0
+  }
+ ],
+ "MacBook Air 15\" M5|euronics": [
+  {
+   "date": "2026-09-29",
+   "price": 1749.0
+  }
+ ],
+ "MacBook Pro 14\" M5|mediaworld": [
+  {
+   "date": "2026-09-29",
+   "price": 1899.49
+  }
+ ],
+ "MacBook Pro 14\" M5|unieuro": [
+  {
+   "date": "2026-09-29",
+   "price": 1899.0
+  }
+ ],
+ "MacBook Pro 14\" M5|euronics": [
+  {
+   "date": "2026-09-29",
+   "price": 2249.99
+  }
+ ]
+}
