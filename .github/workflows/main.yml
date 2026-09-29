@@ -1,0 +1,37 @@
+name: Prezzi Mac ogni mattina
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prezzi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa dipendenze
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Raccogli prezzi e invia su WhatsApp
+        env:
+          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+        run: python price_bot.py
+
+      - name: Salva lo storico prezzi
+        run: |
+          git config user.name "price-bot"
+          git config user.email "price-bot@users.noreply.github.com"
+          git add history.json
+          git diff --staged --quiet || (git commit -m "Aggiorna storico prezzi" && git push)
