@@ -4,40 +4,30 @@
       "name": "MacBook Air 13\" M5",
       "target_price": null,
       "urls": {
-        "amazon": "INCOLLA_QUI_URL_AMAZON",
-        "mediaworld": "INCOLLA_QUI_URL_MEDIAWORLD",
-        "unieuro": "INCOLLA_QUI_URL_UNIEURO",
-        "euronics": "INCOLLA_QUI_URL_EURONICS"
+        "amazon": "https://www.amazon.it/Apple-MacBook-Air-chip-archiviazione/dp/B0GR19ZS2Z/ref=asc_df_B0GR1Q41MD?mcid=133d4979a4da32ca85f44eb92ebcb7c0&tag=googshopit-21&linkCode=df0&hvadid=700979707616&hvpos=&hvnetw=g&hvrand=6116991981284741960&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=1008463&hvtargid=pla-2478139679499&psc=1&hvocijid=6116991981284741960-B0GR1Q41MD-&hvexpln=0&th=1",
+        "mediaworld": "https://www.mediaworld.it/it/product/_apple-macbook-air-13-chip-m5-10-cpu-8-gpu-16gb-512gb-mezzanotte-566914.html",
+        "unieuro": "https://www.unieuro.it/online/MacBook/MacBook-Air-13-M5-chip-10core-CPU-8core-GPU-16GB-512GB-SSD---Mezzanotte-pidAPLMDHE4TA",
+        "euronics": "https://www.euronics.it/informatica/mac/macbook/apple---macbook-air-13-m5-core-10-cpu-8-gpu-16gb-512gb-mezzanotte/262002968.html?utm_source=google&utm_medium=cpc&utm_campaign=04_LF_PMAX_Google_Always-on_Informatica&utm_id=18725404946&utm_source_platform=google+ads&gad_source=1&gad_campaignid=18721820392&gbraid=0AAAAACtPrNNALJQPEp1I9tSLby68vJaDr&gclid=CjwKCAjww-3VBhAcEiwAwUUIu1eVgnnnZt7rnrXihEfWCeuQfj_LodoyIIpbiTsQFBwPblo6sTdMPhoCWGQQAvD_BwE"
       }
     },
     {
       "name": "MacBook Air 15\" M5",
       "target_price": null,
       "urls": {
-        "amazon": "INCOLLA_QUI_URL_AMAZON",
-        "mediaworld": "INCOLLA_QUI_URL_MEDIAWORLD",
-        "unieuro": "INCOLLA_QUI_URL_UNIEURO",
-        "euronics": "INCOLLA_QUI_URL_EURONICS"
+        "amazon": "https://www.amazon.it/Apple-MacBook-Air-chip-archiviazione/dp/B0GR1FRR3F/ref=mp_s_a_1_2?crid=IJSNAEU03NZM&dib=eyJ2IjoiMSJ9.31zZ-s489DEpfzRjDR6xfTJNIEBOz2Djbj-kxfkn1Cwvjs2smPkxXJTx_epd-iL4pjEwX6gJag4afUXr5PdsRok9Ir4eAZjKy8o9Ksg5I6lWM8gzm_s1jPovWZ-m8zRMmn-NcrGPeqrDLFRDfhC4cMQwMIIkhrTc8SpJesJWj3ltbOzXhzucn4lD881x2N1au-YPMSY3wQuxrXJQQVYjww.lyp7SGKFoYmyS40PpwKANNGbMFS1-9aDKCCVXMhz3-g&dib_tag=se&keywords=mac+m5+15%22&qid=1790666201&sprefix=mac+m5+15%22%2Capple-devices%2C161&sr=8-2",
+        "mediaworld": "https://www.mediaworld.it/it/product/_apple-macbook-air-15-chip-m5-10-cpu-10-gpu-16gb-512gb-mezzanotte-424513.html",
+        "unieuro": "https://www.unieuro.it/online/MacBook/MacBook-Air-15-M5-chip-10core-CPU-10core-GPU-16GB-512GB-SSD---Celeste-pidAPLMDVQ4TA?utm_campaign=unieuro_informatica_multi_performance_notebook_pmax_multi_%5Bmixed%5D_vvkb261adc9c2344d8b56c6&gclsrc=aw.ds&gad_source=1&gad_campaignid=19847668032&gbraid=0AAAAADMtsiw0Mz0TIOpGCRis36sxUmVDW&gclid=CjwKCAjww-3VBhAcEiwAwUUIu52YjTyLtjsVrXWbZV_4maiuKjOf3CemhmebfvE6X3MGv3DT-r6WHRoCZhMQAvD_BwE",
+        "euronics": "https://www.euronics.it/informatica/mac/macbook/apple---macbook-air-15-m5-core-10-cpu-10-gpu-16gb-512gb-galassia/262002959.html?_gl=1*1tvls05*_up*MQ..*_gs*MQ..&gclid=CjwKCAjww-3VBhAcEiwAwUUIu1eVgnnnZt7rnrXihEfWCeuQfj_LodoyIIpbiTsQFBwPblo6sTdMPhoCWGQQAvD_BwE&gbraid=0AAAAACtPrNNALJQPEp1I9tSLby68vJaDr"
       }
     },
     {
       "name": "MacBook Pro 14\" M5",
       "target_price": null,
       "urls": {
-        "amazon": "INCOLLA_QUI_URL_AMAZON",
-        "mediaworld": "INCOLLA_QUI_URL_MEDIAWORLD",
-        "unieuro": "INCOLLA_QUI_URL_UNIEURO",
-        "euronics": "INCOLLA_QUI_URL_EURONICS"
-      }
-    },
-    {
-      "name": "MacBook Pro 16\" M5",
-      "target_price": null,
-      "urls": {
-        "amazon": "INCOLLA_QUI_URL_AMAZON",
-        "mediaworld": "INCOLLA_QUI_URL_MEDIAWORLD",
-        "unieuro": "INCOLLA_QUI_URL_UNIEURO",
-        "euronics": "INCOLLA_QUI_URL_EURONICS"
+        "amazon": "https://www.amazon.it/Apple-2025-MacBook-Laptop-chip/dp/B0FWDC448K/ref=mp_s_a_1_2_sspa?crid=ALEUQUKNL9NE&dib=eyJ2IjoiMSJ9.NqXULUMkKI5o1_lafNQtxLI8som12taMv3jW262EiLZo4rY6k2WGKDbV1WV-4184HlVxikr-hMUfe0bMKHXAILrl5wmztXwGpIuDfR0u8qxE5LyNd9YmqkvIDxOVMnLMPt1PHqH3cqHLNJURGGYxxBFTUAdXOffhPsB7_yqzN0PR0qKPC3QPu6I6kt-YM-HA_ou-kQSMsYpQBlWqv47cLg.khdxm0ccp-L8I_RYt2fAfD7hbij5xV3HtTTEERzEjF4&dib_tag=se&keywords=macbook+pro&qid=1790666296&sprefix=macb%2Caps%2C203&sr=8-2-spons&aref=AEU37Ocydp&sp_csd=d2lkZ2V0TmFtZT1zcF9waG9uZV9zZWFyY2hfYXRm&psc=1",
+        "mediaworld": "https://www.mediaworld.it/it/product/_apple-mb-pro-m5-14-16-1-sb-notebook-142-processore-apple-m5-cpu-10-core-apple-ram-16-gb-1000-gb-ssd-nero-siderale-424454.html",
+        "unieuro": "https://www.unieuro.it/online/MacBook/MacBook-Pro-14-Chip-M5-10core-CPU-10core-GPU-16GB-1TB-SSD-Nero-Siderale-pidAPLMDE14TA",
+        "euronics": "https://www.euronics.it/informatica/mac/macbook/apple---macbook-pro-14-m5-core-10-cpu-10-gpu-16gb-1tb-nero-siderale/252013188.html?_gl=1*1mdsi17*_up*MQ..*_gs*MQ..&gclid=CjwKCAjww-3VBhAcEiwAwUUIu1eVgnnnZt7rnrXihEfWCeuQfj_LodoyIIpbiTsQFBwPblo6sTdMPhoCWGQQAvD_BwE&gbraid=0AAAAACtPrNNALJQPEp1I9tSLby68vJaDr"
       }
     }
   ]
