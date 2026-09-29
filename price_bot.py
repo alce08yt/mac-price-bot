@@ -48,8 +48,16 @@ STORE_LABELS = {
 # Se uno store cambia layout, e' qui che si interviene.
 SELECTORS = {
     "amazon": [
-        "#corePrice_feature_div span.a-offscreen",
-        "span.a-price:not(.a-text-price) span.a-offscreen",
+        "#corePriceDisplay_desktop_feature_div .priceToPay .a-offscreen",
+        "#corePriceDisplay_desktop_feature_div .a-offscreen",
+        "#corePrice_feature_div .a-offscreen",
+        ".priceToPay .a-offscreen",
+        "#apex_desktop .a-offscreen",
+        "#newBuyBoxPrice",
+        "#price_inside_buybox",
+        "#tp_price_block_total_price_ww .a-offscreen",
+        "span.a-price:not(.a-text-price) .a-offscreen",
+        ".a-price .a-offscreen",
         "#priceblock_ourprice",
     ],
     "mediaworld": [
@@ -77,7 +85,7 @@ def parse_price(raw):
     if isinstance(raw, (int, float)):
         v = float(raw)
     else:
-        s = re.sub(r"[^\d,.]", "", str(raw))
+        s = re.sub(r"[^\d,.]", "", str(raw)).strip(".,")
         if not s:
             return None
         if "," in s and "." in s:
@@ -150,29 +158,51 @@ def price_from_selectors(soup, store):
     return None
 
 
+def price_from_regex(html, store):
+    """Ultima spiaggia: cerca il prezzo nel JSON incorporato nella pagina."""
+    if store != "amazon":
+        return None
+    patterns = (
+        r'"priceAmount"\s*:\s*"?([\d.,]+)',
+        r'"displayPrice"\s*:\s*"[^"\d]*([\d.,]+)',
+        r'"buyingPrice"\s*:\s*"?([\d.,]+)',
+    )
+    for pat in patterns:
+        for m in re.finditer(pat, html):
+            p = parse_price(m.group(1))
+            if p:
+                return p
+    return None
+
+
 def extract_price(html, store):
     soup = BeautifulSoup(html, "html.parser")
     return (
         price_from_jsonld(soup)
         or price_from_meta(soup)
         or price_from_selectors(soup, store)
+        or price_from_regex(html, store)
     )
 
 
 def looks_blocked(html):
-    """True solo se la pagina somiglia a una schermata anti-bot (piccola e con parole chiave)."""
+    """True solo se la pagina somiglia a una schermata anti-bot (piccola + parole chiave)."""
     low = html.lower()
     keys = (
+        "captcha",
         "robot check",
         "access denied",
         "are you a human",
         "verifica di essere",
+        "inserisci i caratteri",
+        "digita i caratteri",
         "enter the characters you see",
+        "non sei un robot",
         "unusual traffic",
         "request blocked",
         "pardon our interruption",
     )
-    return len(html) < 60000 and any(k in low for k in keys)
+    return len(html) < 40000 and any(k in low for k in keys)
 
 
 def page_hint(html):
@@ -196,11 +226,16 @@ def fetch_playwright(url):
     from playwright.sync_api import sync_playwright
 
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(
+            args=["--disable-blink-features=AutomationControlled"]
+        )
         ctx = browser.new_context(
             locale="it-IT",
             user_agent=UA,
             viewport={"width": 1366, "height": 900},
+        )
+        ctx.add_init_script(
+            "Object.defineProperty(navigator,'webdriver',{get:()=>undefined})"
         )
         page = ctx.new_page()
         page.goto(url, wait_until="domcontentloaded", timeout=45000)
