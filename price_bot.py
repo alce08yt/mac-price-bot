@@ -160,11 +160,28 @@ def extract_price(html, store):
 
 
 def looks_blocked(html):
+    """True solo se la pagina somiglia a una schermata anti-bot (piccola e con parole chiave)."""
     low = html.lower()
-    return any(
-        k in low
-        for k in ("captcha", "robot check", "access denied", "are you a human", "verifica di essere")
+    keys = (
+        "robot check",
+        "access denied",
+        "are you a human",
+        "verifica di essere",
+        "enter the characters you see",
+        "unusual traffic",
+        "request blocked",
+        "pardon our interruption",
     )
+    return len(html) < 60000 and any(k in low for k in keys)
+
+
+def page_hint(html):
+    """Titolo della pagina, utile per capire cosa e' arrivato davvero."""
+    try:
+        t = BeautifulSoup(html, "html.parser").title
+        return (t.get_text(strip=True) if t else "")[:35]
+    except Exception:  # noqa: BLE001
+        return ""
 
 
 # ---------------------------------------------------------------- fetching ---
@@ -199,28 +216,29 @@ def get_price(store, url):
     # 1) richiesta semplice (veloce)
     try:
         html = fetch_requests(url)
-        if looks_blocked(html):
-            note = "bloccato"
-        else:
-            p = extract_price(html, store)
-            if p:
-                return p, None
-            note = "prezzo non trovato"
+        p = extract_price(html, store)  # si prova SEMPRE a leggere il prezzo
+        if p:
+            return p, None
+        hint = page_hint(html)
+        print(f"[{store}] requests: nessun prezzo, len={len(html)}, titolo='{hint}'")
+        note = f"bloccato: {hint}" if looks_blocked(html) else f"prezzo non trovato: {hint}"
     except Exception as e:  # noqa: BLE001
         note = str(e)[:40]
+        print(f"[{store}] requests errore: {note}")
 
     # 2) browser vero (se Playwright e' installato)
     try:
         html = fetch_playwright(url)
-        if looks_blocked(html):
-            return None, "bloccato"
         p = extract_price(html, store)
         if p:
             return p, None
-        return None, "prezzo non trovato"
+        hint = page_hint(html)
+        print(f"[{store}] playwright: nessun prezzo, len={len(html)}, titolo='{hint}'")
+        return None, (f"bloccato: {hint}" if looks_blocked(html) else f"prezzo non trovato: {hint}")
     except ImportError:
         return None, note
     except Exception as e:  # noqa: BLE001
+        print(f"[{store}] playwright errore: {str(e)[:80]}")
         return None, note or str(e)[:40]
 
 
@@ -357,3 +375,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+        
