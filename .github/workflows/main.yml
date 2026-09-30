@@ -2,9 +2,9 @@ name: Prezzi Mac ogni mattina
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "23 5 * * *"
   workflow_dispatch:
-
+  
 permissions:
   contents: write
 
